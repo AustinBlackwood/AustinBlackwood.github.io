@@ -1,0 +1,125 @@
+$background-color:#271d32;
+$font-color-main: white;
+$font-color-muted: #7f7d87;
+$accent-color: rgb(85, 255, 198);
+$letter-spacing: 0.1;
+$link-hover-background:rgb(85, 255, 198, 0.2);
+
+$font-weights:("thin":400,
+    "regular": 500,
+    "medium": 600,
+    "bold": 700,
+    "super-bold":1000);
+
+
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.text--center {
+    text-align: center;
+}
+.block {
+    display: block;
+}
+
+@function weight($weight-name) {
+    @return map-get($map: $font-weights, $key: $weight-name)
+}
+;
+
+@mixin flex ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    background-color: $background-color;
+    letter-spacing: $letter-spacing;
+}
+
+.header {
+    border-bottom: $accent-color 3px solid;
+    .flex--nav {
+        @include flex(row, center, center);
+        gap: 5vw;
+        font-size: 0.9rem;
+        a {
+            font-size: 1em;
+            padding: 1rem;
+            text-decoration: none;
+            color: $font-color-main;
+        }
+    }
+}
+
+a:hover{
+    background-color: $link-hover-background;
+}
+
+.header__name {
+    color: $font-color-main;
+    text-decoration: none;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: weight(medium);
+    font-size: 1.2;
+}
+
+.nameplate {
+    @include flex(row, justify-content, align-items);
+    justify-content: center;
+    padding: 10vw;
+}
+
+.hero {
+    color: $accent-color;
+    height: 390px;
+    max-height: 54vw;
+    max-width: 700px;
+    position: relative;
+    text-transform: uppercase;
+    width: 90vw;
+    z-index: 1;
+}
+.hero-line-1 {
+    font-size: min(23vw, 180px);
+    line-height: .8;
+}
+.hero-line-2 {
+    background: var(--color-hero-text);
+    color: var(--color-hero-bg);
+    font-size: min(14vw, 102px);
+    line-height: 1.4;
+    background-color: $accent-color;
+    color: $background-color;
+}
+.hero-line-3 {
+    font-size: min(8.48vw, 66px);
+    line-height: 1.4;
+}
+
+@media only screen and (min-width: 600px) {
+    .header {
+        @include flex(row, space-between, center);
+        align-items: center;
+        padding: 0.2rem 2rem 0.2rem 2rem;
+
+        .header__name {
+            margin: 0;
+        }
+        flex--nav {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

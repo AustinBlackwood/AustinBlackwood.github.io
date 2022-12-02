@@ -1,532 +1,113 @@
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/* http://aleclownes.com/2017/02/01/crt-display.html  credit for crt flicker*/
-/* This is an awesome piece of code that lets you apply a crt effect */
+.no-margin {
+  margin: 0;
+}
 
-@keyframes flicker {
-	0% {
-	  opacity: 0.27861;
-	}
-	5% {
-	  opacity: 0.34769;
-	}
-	10% {
-	  opacity: 0.23604;
-	}
-	15% {
-	  opacity: 0.90626;
-	}
-	20% {
-	  opacity: 0.18128;
-	}
-	25% {
-	  opacity: 0.83891;
-	}
-	30% {
-	  opacity: 0.65583;
-	}
-	35% {
-	  opacity: 0.67807;
-	}
-	40% {
-	  opacity: 0.26559;
-	}
-	45% {
-	  opacity: 0.84693;
-	}
-	50% {
-	  opacity: 0.96019;
-	}
-	55% {
-	  opacity: 0.08594;
-	}
-	60% {
-	  opacity: 0.20313;
-	}
-	65% {
-	  opacity: 0.71988;
-	}
-	70% {
-	  opacity: 0.53455;
-	}
-	75% {
-	  opacity: 0.37288;
-	}
-	80% {
-	  opacity: 0.71428;
-	}
-	85% {
-	  opacity: 0.70419;
-	}
-	90% {
-	  opacity: 0.7003;
-	}
-	95% {
-	  opacity: 0.36108;
-	}
-	100% {
-	  opacity: 0.24387;
-	}
-  }
-  @keyframes textShadow {
-	0% {
-	  text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	5% {
-	  text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	10% {
-	  text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	15% {
-	  text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	20% {
-	  text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	25% {
-	  text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	30% {
-	  text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	35% {
-	  text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	40% {
-	  text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	45% {
-	  text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	50% {
-	  text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	55% {
-	  text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	60% {
-	  text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	65% {
-	  text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	70% {
-	  text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	75% {
-	  text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	80% {
-	  text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	85% {
-	  text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	90% {
-	  text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	95% {
-	  text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-	100% {
-	  text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-	}
-  }
-  .crt::after {
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: rgba(18, 16, 16, 0.1);
-	opacity: 0;
-	z-index: 2;
-	pointer-events: none;
-	animation: flicker 0.15s infinite;
-  }
-  .crt::before {
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-	z-index: 2;
-	background-size: 100% 2px, 3px 100%;
-	pointer-events: none;
-  }
-  .crt {
-	animation: textShadow 1.6s infinite;
-  }
+.no-padding {
+  padding: 0;
+}
 
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.text--center {
+  text-align: center;
+}
 
-* { 
-	box-sizing: border-box;
-	font-family: 'Source Code Pro', monospace;
+.block {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html, body {
-	min-height: 100%;
-	background: #081702;
-	color: #1aff00;
-	display: flex;
-	flex-direction: column;
-	gap: 5%;
+  background-color: #271d32;
+  letter-spacing: 0.1;
 }
 
-body {
-	text-rendering: optimizeLegibility;
+.header {
+  border-bottom: rgb(85, 255, 198) 3px solid;
 }
-	
-body, ul, ol, dl {
-	margin: 0;
+.header .flex--nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  font-size: 0.9rem;
 }
-
-article, aside, audio, 
-footer, header, nav, section, video {
-	display: block; 
-}
-
-p { 
-	-ms-word-break: break-all;
-	word-break: break-all;
-	word-break: break-word;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
-} 
-
-.power-button,a {
-	position: fixed;
-	margin:1% 0% 1% 10%;
-	font-size: 2.5rem;
-	text-decoration: none;
-	color: #1aff00;
+.header .flex--nav a {
+  font-size: 1em;
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
 }
 
-.vignette {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+a:hover {
+  background-color: rgba(85, 255, 198, 0.2);
 }
 
-.header-main{
-	margin-top: 2%;
-	flex-direction: column;
-	font-size: 2rem;
+.header__name {
+  color: white;
+  text-decoration: none;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-weight: 600;
+  font-size: 1.2;
 }
 
-.header-main__subtext{
-	font-size: 1.7rem;
+.nameplate {
+  display: flex;
+  flex-direction: row;
+  justify-content: justify-content;
+  align-items: align-items;
+  justify-content: center;
+  padding: 10vw;
 }
 
-.header-main__logo, .header-main__subtext{
-	z-index: 1;
-	margin: 0 auto;
-	text-align: center;
-	visibility: hidden;
-	overflow: hidden;
-	white-space: nowrap;
-	animation: typing 2.5s steps(50, end);
-	animation-fill-mode:forwards;
+.hero {
+  color: rgb(85, 255, 198);
+  height: 390px;
+  max-height: 54vw;
+  max-width: 700px;
+  position: relative;
+  text-transform: uppercase;
+  width: 90vw;
+  z-index: 1;
 }
 
-.header-main__logo::after{
-	content: "_";
-	display: inline-block;
-	animation: cursor-blink 1s steps(2) infinite;
+.hero-line-1 {
+  font-size: min(23vw, 180px);
+  line-height: 0.8;
 }
 
-/*Timing Section ///////////////////////////////////////////////////////*/
-
-#subtext2{
-	animation-delay: 2s;
-	font-size: 1rem;
+.hero-line-2 {
+  background: var(--color-hero-text);
+  color: var(--color-hero-bg);
+  font-size: min(14vw, 102px);
+  line-height: 1.4;
+  background-color: rgb(85, 255, 198);
+  color: #271d32;
 }
 
-#subtext3{
-	animation-delay: 2.5s;
-	font-size: 1rem;
+.hero-line-3 {
+  font-size: min(8.48vw, 66px);
+  line-height: 1.4;
 }
 
-#subtext4{
-	animation-delay: 3.5s;
-}
-
-.header-main__logo{
-	animation-delay: 5s;
-}
-
-#spinner--layer1{
-	border-style:ridge;
-	width: 500px;
-	height: 500px;
-	animation: spin 3s steps(200) infinite;
-	animation-delay: 6s;
-}
-
-#spinner--layer2{
-	border-style:double;
-	width: 700px;
-	height: 700px;
-	animation: spin 2s steps(200) infinite;
-	animation-delay: 7s;
-}
-
-#spinner--layer3{
-	border-style:ridge;
-	width: 900px;
-	height: 900px;
-	animation: spin 15s steps(600) infinite reverse;
-	animation-delay: 9s;
-}
-
-#nav-block1{
-	visibility: hidden;
-	animation-delay: 6s;
-}
-
-#nav-block2{
-	visibility: hidden;
-	animation-delay: 6.5s;
-}
-
-#nav-block3{
-	visibility: hidden;
-	animation-delay: 7s;
-}
-
-.loading-holder{
-	display: flex;
-	flex-direction: row;
-	padding: 0%;
-}
-
-.spinner {
-	z-index: -1;
-	border: 5px solid #6ecf6544;
-	border-radius: 50%;
-	animation: spin 20s steps(200) infinite;
-	overflow: hidden;
-	white-space: nowrap;
-	position: fixed;
-    top:-60%; right:-100%; left:-100%; bottom:-100%;
-    margin:auto;
+@media only screen and (min-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    padding: 0.2rem 2rem 0.2rem 2rem;
   }
-
-.nav-block-container{
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.nav-block{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
-	text-align: center;
-	background: #1aff0021;
-	border: 1px solid #1aff00;
-	font-size: 2rem;
-	max-width: 80%;
-	height: 20vh;
-	animation: typing 8s forwards;
-	cursor: pointer;
-}
-
-.nav-block:hover{
-	background-color: #1aff0058;
-	border: 3px;
-}
-
-.nav-block a{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0%;
-	padding: 0%;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-
-/* Layer 1 is the inmost spinner out to layer 3 */
-
-@keyframes cursor-blink {
-	0% {
-		opacity: 0;
-	}
-}
-
-@keyframes typing {
-	from { width: 0;
-	visibility: visible;}
-	to { width: 100% ;
-	visibility: visible;}
-}
-  
-@keyframes spin {
-0% { transform: rotate(0deg);}
-30%{border-width: 100px;}
-33%{border-width: 50px;}
-91% { border-width: 100px;}
-100% { transform: rotate(360deg);}
-}
-
-@keyframes pop-in {
-0%{visibility: hidden;}
-98%{visibility: hidden;}
-100%{visibility: visible;}
-}
-
-@media screen and (min-width: 1500px) {
-	html,body{
-		gap: 0%;
-	}
-	.header-main{
-		font-size: 2.5rem;
-	}
-	.header-main__subtext{
-		font-size: 2.5rem;
-	}
-
-	#subtext2{
-		font-size: 1.7rem;
-	}
-	
-	#subtext3{
-		font-size: 1.7rem;
-	}
-
-	#spinner--layer1{
-		width: 800px;
-		height: 800px;
-	}
-	
-	#spinner--layer2{
-		border-style:double;
-		width: 1000px;
-		height: 1000px;
-	}
-	
-	#spinner--layer3{
-		width: 1200px;
-		height: 1200px;
-	}
-
-	.nav-block{
-		height: 15vh;
-	}
-}
-
-@media screen and (max-width: 650px) {
-	.power-button{
-		display: none;
-	}
-	.header-main{
-		font-size: 1rem;
-	}
-	.header-main__subtext{
-		font-size: 1rem;
-	}
-
-	#subtext2{
-		font-size: 1rem;
-	}
-	
-	#subtext3{
-		font-size: 1rem;
-	}
-
-	#spinner--layer1{
-		width: 200px;
-		height: 200px;
-		animation: spin 3s steps(100) infinite;
-	}
-	
-	#spinner--layer2{
-		border-style:double;
-		width: 400px;
-		height: 400px;
-		animation: spin 0.9s steps(100) infinite;
-	}
-	
-	#spinner--layer3{
-		width: 600px;
-		height: 600px;
-		animation: spin 15s steps(500) infinite reverse;
-	}
-
-	.nav-block a{
-		font-size: 80%;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	html, body{
-		gap: 10%;
-	}
-
-	.power-button{
-		display: none;
-	}
-	.header-main{
-		margin-top: 10%;
-		font-size: 0.8rem;
-	}
-	.header-main__subtext{
-		font-size: 0.7rem;
-	}
-
-	#subtext2{
-		font-size: 0.7rem;
-	}
-	
-	#subtext3{
-		font-size: 0.8rem;
-	}
-
-	#spinner--layer1{
-		width: 150px;
-		height: 150px;
-		animation: spin 3s steps(100) infinite;
-	}
-	
-	#spinner--layer2{
-		border-style:double;
-		width: 300px;
-		height: 300px;
-		animation: spin 0.9s steps(100) infinite;
-	}
-	
-	#spinner--layer3{
-		width: 500px;
-		height: 500px;
-		animation: spin 15s steps(500) infinite reverse;
-	}
-
-	.nav-block a{
-		font-size: 2rem;
-	}
-}
-
-@media screen and (max-height: 920px){
-	html,body{
-		gap: 0%;
-		margin: 0%;
-	}
-}
-
+  .header .header__name {
+    margin: 0;
+  }
+  .header flex--nav {
+    margin: 0;
+    padding: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */
