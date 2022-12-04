@@ -1,16 +1,16 @@
 $background-color:#271d32;
 $font-color-main: white;
 $font-color-muted: #7f7d87;
-$accent-color: rgb(85, 255, 198);
+$accent-color: rgb(65, 255, 220);
 $letter-spacing: 0.1;
 $link-hover-background:rgb(85, 255, 198, 0.2);
+$hover-scale:1.1;
 
 $font-weights:("thin":400,
     "regular": 500,
     "medium": 600,
     "bold": 700,
     "super-bold":1000);
-
 
 .no-margin {
     margin: 0;
@@ -26,9 +26,8 @@ $font-weights:("thin":400,
 }
 
 @function weight($weight-name) {
-    @return map-get($map: $font-weights, $key: $weight-name)
+    @return map-get($map: $font-weights, $key: $weight-name);
 }
-;
 
 @mixin flex ($direction, $justify, $align) {
     display: flex;
@@ -49,30 +48,32 @@ html, body {
 
 .header {
     border-bottom: $accent-color 3px solid;
+    img{
+        width: 5vw;
+    }
     .flex--nav {
         @include flex(row, center, center);
         gap: 5vw;
         font-size: 0.9rem;
         a {
             font-size: 1em;
-            padding: 1rem;
+            padding: 1.5vh 3vw 1.5vh 3vw;
             text-decoration: none;
             color: $font-color-main;
         }
+        a:hover{
+            background-color: $link-hover-background;
+            transform:$hover-scale;
+        }
     }
-}
-
-a:hover{
-    background-color: $link-hover-background;
 }
 
 .header__name {
     color: $font-color-main;
     text-decoration: none;
-    margin-top: 2em;
-    margin-bottom: 1em;
     font-weight: weight(medium);
     font-size: 1.2;
+    margin-top: 5vw;
 }
 
 .nameplate {
@@ -98,7 +99,7 @@ a:hover{
 .hero-line-2 {
     background: var(--color-hero-text);
     color: var(--color-hero-bg);
-    font-size: min(14vw, 102px);
+    font-size: min(13vw, 102px);
     line-height: 1.4;
     background-color: $accent-color;
     color: $background-color;
@@ -108,18 +109,22 @@ a:hover{
     line-height: 1.4;
 }
 
+.my-face{
+    
+    width: 50%;
+}
+
 @media only screen and (min-width: 600px) {
     .header {
         @include flex(row, space-between, center);
-        align-items: center;
-        padding: 0.2rem 2rem 0.2rem 2rem;
-
-        .header__name {
-            margin: 0;
+        .header__name{
+            padding-left: 4vw;
         }
-        flex--nav {
-            margin: 0;
-            padding: 0;
+        .flex--nav{
+            gap: 1vw;
+            a{
+                padding-right: 5vw;
+            }
         }
     }
 }

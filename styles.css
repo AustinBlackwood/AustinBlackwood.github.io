@@ -25,7 +25,10 @@ html, body {
 }
 
 .header {
-  border-bottom: rgb(85, 255, 198) 3px solid;
+  border-bottom: rgb(65, 255, 220) 3px solid;
+}
+.header img {
+  width: 5vw;
 }
 .header .flex--nav {
   display: flex;
@@ -37,22 +40,21 @@ html, body {
 }
 .header .flex--nav a {
   font-size: 1em;
-  padding: 1rem;
+  padding: 1.5vh 3vw 1.5vh 3vw;
   text-decoration: none;
   color: white;
 }
-
-a:hover {
+.header .flex--nav a:hover {
   background-color: rgba(85, 255, 198, 0.2);
+  transform: 1.1;
 }
 
 .header__name {
   color: white;
   text-decoration: none;
-  margin-top: 2em;
-  margin-bottom: 1em;
   font-weight: 600;
   font-size: 1.2;
+  margin-top: 5vw;
 }
 
 .nameplate {
@@ -65,7 +67,7 @@ a:hover {
 }
 
 .hero {
-  color: rgb(85, 255, 198);
+  color: rgb(65, 255, 220);
   height: 390px;
   max-height: 54vw;
   max-width: 700px;
@@ -83,9 +85,9 @@ a:hover {
 .hero-line-2 {
   background: var(--color-hero-text);
   color: var(--color-hero-bg);
-  font-size: min(14vw, 102px);
+  font-size: min(13vw, 102px);
   line-height: 1.4;
-  background-color: rgb(85, 255, 198);
+  background-color: rgb(65, 255, 220);
   color: #271d32;
 }
 
@@ -94,20 +96,24 @@ a:hover {
   line-height: 1.4;
 }
 
+.my-face {
+  width: 50%;
+}
+
 @media only screen and (min-width: 600px) {
   .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    align-items: center;
-    padding: 0.2rem 2rem 0.2rem 2rem;
   }
   .header .header__name {
-    margin: 0;
+    padding-left: 4vw;
   }
-  .header flex--nav {
-    margin: 0;
-    padding: 0;
+  .header .flex--nav {
+    gap: 1vw;
+  }
+  .header .flex--nav a {
+    padding-right: 5vw;
   }
 }/*# sourceMappingURL=styles.css.map */
