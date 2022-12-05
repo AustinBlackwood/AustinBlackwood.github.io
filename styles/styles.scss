@@ -1,4 +1,4 @@
-$background-color:#131429;
+$background-color:#131320;
 $background-muted:#343047;
 $font-color-main: white;
 $font-color-muted: #7f7d87;
@@ -147,7 +147,9 @@ a:hover{
 #projects{
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: repeat(auto-fit, 90%);
+    justify-content: center;
+    grid-template-columns:90%;
+    margin: 0 auto;
 }
 
 .projects__header{
@@ -160,7 +162,13 @@ a:hover{
 .project__tile{
     display: flex;
     border-radius: 10px;
+    justify-content: space-around;
     background-color: $background-muted;
+    height: 50vw;
+}
+
+.project__tile__image{
+    width: 60%;
 }
 
 @media only screen and (min-width: 600px) {

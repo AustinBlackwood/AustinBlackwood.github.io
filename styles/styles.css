@@ -20,7 +20,7 @@ html {
 }
 
 html, body {
-  background-color: #131429;
+  background-color: #131320;
   letter-spacing: 0.1;
 }
 
@@ -91,9 +91,9 @@ a:hover {
   color: var(--color-hero-bg);
   font-size: min(13vw, 102px);
   line-height: 1.4;
-  background: linear-gradient(#131429 25%, rgb(136, 255, 146) 25%);
+  background: linear-gradient(#131320 25%, rgb(136, 255, 146) 25%);
   background-attachment: fixed;
-  color: #131429;
+  color: #131320;
 }
 
 .hero__line-3 {
@@ -101,8 +101,8 @@ a:hover {
 }
 
 .hero__line-4 {
-  color: #131429;
-  background: linear-gradient(rgb(136, 255, 146) 25%, #131429 25%);
+  color: #131320;
+  background: linear-gradient(rgb(136, 255, 146) 25%, #131320 25%);
   background-attachment: fixed;
   font-size: min(8.48vw, 66px);
   margin-left: auto;
@@ -134,7 +134,9 @@ a:hover {
 #projects {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit, 90%);
+  justify-content: center;
+  grid-template-columns: 90%;
+  margin: 0 auto;
 }
 
 .projects__header {
@@ -147,7 +149,13 @@ a:hover {
 .project__tile {
   display: flex;
   border-radius: 10px;
+  justify-content: space-around;
   background-color: #343047;
+  height: 50vw;
+}
+
+.project__tile__image {
+  width: 60%;
 }
 
 @media only screen and (min-width: 600px) {
