@@ -1,7 +1,9 @@
-$background-color:#271d32;
+$background-color:#131429;
+$background-muted:#343047;
 $font-color-main: white;
 $font-color-muted: #7f7d87;
-$accent-color: rgb(65, 255, 220);
+$accent-color: rgb(136, 255, 146);
+$accent-color-2: rgb(184, 223, 255);
 $letter-spacing: 0.1;
 $link-hover-background:rgb(85, 255, 198, 0.2);
 $hover-scale:1.1;
@@ -46,6 +48,14 @@ html, body {
     letter-spacing: $letter-spacing;
 }
 
+a{
+    padding: 1.5vh 3vw 1.5vh 3vw;
+}
+a:hover{
+    background-color: $link-hover-background;
+    transform:$hover-scale;
+}
+
 .header {
     border-bottom: $accent-color 3px solid;
     img{
@@ -57,13 +67,8 @@ html, body {
         font-size: 0.9rem;
         a {
             font-size: 1em;
-            padding: 1.5vh 3vw 1.5vh 3vw;
             text-decoration: none;
             color: $font-color-main;
-        }
-        a:hover{
-            background-color: $link-hover-background;
-            transform:$hover-scale;
         }
     }
 }
@@ -92,39 +97,95 @@ html, body {
     width: 90vw;
     z-index: 1;
 }
-.hero-line-1 {
+
+.hero__line-1 {
     font-size: min(23vw, 180px);
     line-height: .8;
 }
-.hero-line-2 {
+.hero__line-2 {
     background: var(--color-hero-text);
     color: var(--color-hero-bg);
     font-size: min(13vw, 102px);
     line-height: 1.4;
-    background-color: $accent-color;
+    background: linear-gradient($background-color 25%, $accent-color 25%);
+    background-attachment: fixed;
     color: $background-color;
 }
-.hero-line-3 {
+
+.hero__line-3 {
     font-size: min(8.48vw, 66px);
-    line-height: 1.4;
 }
 
-.my-face{
-    
-    width: 50%;
+.hero__line-4 {
+    color: $background-color;
+    background: linear-gradient($accent-color 25%, $background-color 25%);
+    background-attachment: fixed;
+    font-size: min(8.48vw, 66px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bio__container{
+    @include flex(column, flex-start, align-items);
+    background-color: $background-muted;
+    color: $font-color-main;
+    padding: 5%;
+    gap: 10px;
+    margin: 5%;
+    border-radius: 15px 50px;
+    font-size: large;
+}
+
+.bio__portrait{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border-radius: 10%;
+}
+
+#projects{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, 90%);
+}
+
+.projects__header{
+    background: linear-gradient($accent-color-2 50%, $accent-color 90%);
+    background-attachment: fixed;
+    padding: 5vw;
+    margin: 5vw;
+}
+
+.project__tile{
+    display: flex;
+    border-radius: 10px;
+    background-color: $background-muted;
 }
 
 @media only screen and (min-width: 600px) {
     .header {
         @include flex(row, space-between, center);
         .header__name{
-            padding-left: 4vw;
+            padding-right: 5vw;
+            padding-left: 5vw;
+            margin-top:0;
         }
         .flex--nav{
             gap: 1vw;
             a{
                 padding-right: 5vw;
+                padding-left: 5vw;
             }
         }
+    }
+    .bio__container{
+        @include flex(row, space-around, align-items);
+        gap: 10%;
+        font-size: large;
+    }
+    
+    .bio__portrait{
+        width: 40%;
     }
 }
