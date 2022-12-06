@@ -20,12 +20,13 @@ html {
 }
 
 html, body {
-  background-color: #131320;
+  background-color: #000029;
   letter-spacing: 0.1;
 }
 
 a {
   padding: 1.5vh 3vw 1.5vh 3vw;
+  text-decoration: none;
 }
 
 a:hover {
@@ -58,7 +59,7 @@ a:hover {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.2;
-  margin-top: 5vw;
+  margin-top: 7vw;
 }
 
 .nameplate {
@@ -67,7 +68,9 @@ a:hover {
   justify-content: justify-content;
   align-items: align-items;
   justify-content: center;
-  padding: 10vw;
+  padding: 15vw;
+  margin-top: 17vh;
+  margin-bottom: 28vh;
 }
 
 .hero {
@@ -91,9 +94,9 @@ a:hover {
   color: var(--color-hero-bg);
   font-size: min(13vw, 102px);
   line-height: 1.4;
-  background: linear-gradient(#131320 25%, rgb(136, 255, 146) 25%);
+  background: linear-gradient(#000029 39%, rgb(136, 255, 146) 39%);
   background-attachment: fixed;
-  color: #131320;
+  color: #000029;
 }
 
 .hero__line-3 {
@@ -101,8 +104,8 @@ a:hover {
 }
 
 .hero__line-4 {
-  color: #131320;
-  background: linear-gradient(rgb(136, 255, 146) 25%, #131320 25%);
+  color: #000029;
+  background: linear-gradient(rgb(136, 255, 146) 50%, #000029 50%);
   background-attachment: fixed;
   font-size: min(8.48vw, 66px);
   margin-left: auto;
@@ -114,7 +117,7 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: align-items;
-  background-color: #343047;
+  background-color: #373446;
   color: white;
   padding: 5%;
   gap: 10px;
@@ -135,27 +138,70 @@ a:hover {
   display: grid;
   grid-gap: 15px;
   justify-content: center;
-  grid-template-columns: 90%;
+  grid-template-columns: 90vw;
   margin: 0 auto;
 }
 
 .projects__header {
-  background: linear-gradient(rgb(184, 223, 255) 50%, rgb(136, 255, 146) 90%);
+  background: linear-gradient(rgb(184, 223, 255) 30%, rgb(136, 255, 146) 90%);
   background-attachment: fixed;
+  font-size: min(5vw, 30px);
   padding: 5vw;
-  margin: 5vw;
+  width: 80vw;
 }
 
 .project__tile {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   border-radius: 10px;
-  justify-content: space-around;
-  background-color: #343047;
-  height: 50vw;
+  margin-bottom: 5vw;
+  position: relative;
+  border: #373446 5px solid;
+  padding: 3vw;
+}
+.project__tile::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: url("../img/todo.png");
+  background-size: cover;
+  background-position: top center;
+  opacity: 0.35;
+  filter: blur(2px);
 }
 
-.project__tile__image {
-  width: 60%;
+.project__tile__title, .project__tile__info, .project__link {
+  z-index: 1;
+  font-size: large;
+  font-weight: 700;
+  text-align: center;
+}
+
+.project__tile__title {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.project__link {
+  border: #373446 solid 5px;
+  color: rgb(136, 255, 146);
+  cursor: pointer;
+  width: 40vw;
+  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #373446;
+}
+
+.project__link:hover {
+  scale: 1.1;
 }
 
 @media only screen and (min-width: 600px) {
@@ -177,6 +223,9 @@ a:hover {
     padding-right: 5vw;
     padding-left: 5vw;
   }
+  .nameplate {
+    margin-top: 10vh;
+  }
   .bio__container {
     display: flex;
     flex-direction: row;
@@ -187,5 +236,34 @@ a:hover {
   }
   .bio__portrait {
     width: 40%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  #bio, #projects, #contact {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nameplate {
+    padding-top: 10vh;
+  }
+  #projects {
+    display: block;
+  }
+  .projects__header {
+    margin: 0;
+    margin-bottom: 5vw;
+    width: auto;
+    font-size: 2.5em;
+    padding: 2vw;
+  }
+  .project__tile a {
+    width: 20vw;
   }
 }/*# sourceMappingURL=styles.css.map */

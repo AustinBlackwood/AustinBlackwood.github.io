@@ -1,5 +1,5 @@
-$background-color:#131320;
-$background-muted:#343047;
+$background-color:#000029;
+$background-muted:#373446;
 $font-color-main: white;
 $font-color-muted: #7f7d87;
 $accent-color: rgb(136, 255, 146);
@@ -50,6 +50,7 @@ html, body {
 
 a{
     padding: 1.5vh 3vw 1.5vh 3vw;
+    text-decoration: none;
 }
 a:hover{
     background-color: $link-hover-background;
@@ -78,13 +79,15 @@ a:hover{
     text-decoration: none;
     font-weight: weight(medium);
     font-size: 1.2;
-    margin-top: 5vw;
+    margin-top: 7vw;
 }
 
 .nameplate {
     @include flex(row, justify-content, align-items);
     justify-content: center;
-    padding: 10vw;
+    padding: 15vw;
+    margin-top: 17vh;
+    margin-bottom: 28vh;
 }
 
 .hero {
@@ -107,7 +110,7 @@ a:hover{
     color: var(--color-hero-bg);
     font-size: min(13vw, 102px);
     line-height: 1.4;
-    background: linear-gradient($background-color 25%, $accent-color 25%);
+    background: linear-gradient($background-color 39%, $accent-color 39%);
     background-attachment: fixed;
     color: $background-color;
 }
@@ -118,7 +121,7 @@ a:hover{
 
 .hero__line-4 {
     color: $background-color;
-    background: linear-gradient($accent-color 25%, $background-color 25%);
+    background: linear-gradient($accent-color 50%, $background-color 50%);
     background-attachment: fixed;
     font-size: min(8.48vw, 66px);
     margin-left: auto;
@@ -148,27 +151,68 @@ a:hover{
     display: grid;
     grid-gap: 15px;
     justify-content: center;
-    grid-template-columns:90%;
+    grid-template-columns:90vw;
     margin: 0 auto;
 }
 
 .projects__header{
-    background: linear-gradient($accent-color-2 50%, $accent-color 90%);
+    background: linear-gradient($accent-color-2 30%, $accent-color 90%);
     background-attachment: fixed;
+    font-size: min(5vw, 30px);
     padding: 5vw;
-    margin: 5vw;
+    width: 80vw;
 }
 
 .project__tile{
-    display: flex;
+    @include flex(column, center, center);
+    color: $font-color-main;
     border-radius: 10px;
-    justify-content: space-around;
-    background-color: $background-muted;
-    height: 50vw;
+    margin-bottom: 5vw;
+    position: relative;
+    border: $background-muted 5px solid;
+    padding: 3vw;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top:0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-image: url('../img/todo.png');
+        background-size:cover;
+        background-position: top center;
+        opacity: 0.35;
+        filter: blur(2px);
+    }
 }
 
-.project__tile__image{
-    width: 60%;
+.project__tile__title, .project__tile__info, .project__link{
+    z-index: 1;
+    font-size: large;
+    font-weight: weight(bold);
+    text-align: center;
+}
+
+.project__tile__title{
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.project__link{
+    border: $background-muted solid 5px;
+    color: $accent-color;
+    cursor: pointer;
+    width: 40vw;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: $background-muted;
+}
+
+.project__link:hover{
+    scale: $hover-scale;
 }
 
 @media only screen and (min-width: 600px) {
@@ -178,6 +222,7 @@ a:hover{
             padding-right: 5vw;
             padding-left: 5vw;
             margin-top:0;
+
         }
         .flex--nav{
             gap: 1vw;
@@ -187,13 +232,51 @@ a:hover{
             }
         }
     }
+
+    .nameplate{
+        margin-top: 10vh;
+        
+    }
     .bio__container{
         @include flex(row, space-around, align-items);
         gap: 10%;
         font-size: large;
     }
-    
     .bio__portrait{
         width: 40%;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    #bio, #projects, #contact{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50vw;
+    }
+
+    .header{
+        @include flex(row, space-around, center);
+    }
+
+    .nameplate{
+        padding-top: 10vh;
+    }
+    
+    #projects{
+        display:block;
+    }
+    
+    .projects__header{
+        margin: 0;
+        margin-bottom: 5vw;
+        width: auto;
+        font-size: 2.5em;
+        padding: 2vw
+    }
+    
+    .project__tile{
+        a{
+            width: 20vw;
+        }
     }
 }
