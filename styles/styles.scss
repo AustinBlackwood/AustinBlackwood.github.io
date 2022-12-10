@@ -7,12 +7,12 @@ $accent-color-2: rgb(184, 223, 255);
 $letter-spacing: 0.1;
 $link-hover-background:rgb(85, 255, 198, 0.2);
 $hover-scale:1.1;
-
 $font-weights:("thin":400,
     "regular": 500,
     "medium": 600,
     "bold": 700,
-    "super-bold":1000);
+    "super-bold":1000
+);
 
 .no-margin {
     margin: 0;
@@ -123,7 +123,7 @@ a:hover{
     color: $background-color;
     background: linear-gradient($accent-color 50%, $background-color 50%);
     background-attachment: fixed;
-    font-size: min(8.48vw, 66px);
+    font-size: min(10.48vw, 66px);
     margin-left: auto;
     margin-right: auto;
 }
@@ -137,6 +137,7 @@ a:hover{
     margin: 5%;
     border-radius: 15px 50px;
     font-size: large;
+    box-shadow: 5px 5px 5px 5px black;
 }
 
 .bio__portrait{
@@ -161,6 +162,7 @@ a:hover{
     font-size: min(5vw, 30px);
     padding: 5vw;
     width: 80vw;
+    box-shadow: 5px 5px 5px 5px black;
 }
 
 .project__tile{
@@ -171,6 +173,7 @@ a:hover{
     position: relative;
     border: $background-muted 5px solid;
     padding: 3vw;
+    box-shadow: 5px 5px 5px 5px black;
 
     &::before {
         content: '';
@@ -214,6 +217,50 @@ a:hover{
 .project__link:hover{
     scale: $hover-scale;
 }
+
+#contact{
+    background-color: #373446;
+    margin-top: 5vh;
+    padding: 3vh;
+    box-shadow: 20px 20px 20px 20px black;
+    border-top-left-radius: 70%;
+    border-top-right-radius: 70%;
+}
+
+.contact__header{
+    font-size: min(5vw, 30px);
+    padding: 1vw;
+    width: 30vw;
+    margin:0 auto;
+    text-align: center;
+    font-weight: weight(medium);
+    color: $font-color-main;
+}
+
+.contact__email__link{
+    display: block;
+    width: min-content;
+    font-size: min(4vw, 20px);
+    color: $accent-color-2;
+    text-align: center;
+    margin: 3vh auto;
+}
+
+.contact__circle__links{
+    @include flex(row, center, center);
+    gap: 15px;
+    a{
+        padding: 1vw;
+        img{
+            width: 50px;
+            height: 50px;
+        }&:hover{
+            scale: 1.1;
+            background-color: $background-muted;
+        }
+    }
+}
+
 
 @media only screen and (min-width: 600px) {
     .header {

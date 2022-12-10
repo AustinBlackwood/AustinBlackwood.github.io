@@ -107,7 +107,7 @@ a:hover {
   color: #000029;
   background: linear-gradient(rgb(136, 255, 146) 50%, #000029 50%);
   background-attachment: fixed;
-  font-size: min(8.48vw, 66px);
+  font-size: min(10.48vw, 66px);
   margin-left: auto;
   margin-right: auto;
 }
@@ -124,6 +124,7 @@ a:hover {
   margin: 5%;
   border-radius: 15px 50px;
   font-size: large;
+  box-shadow: 5px 5px 5px 5px black;
 }
 
 .bio__portrait {
@@ -148,6 +149,7 @@ a:hover {
   font-size: min(5vw, 30px);
   padding: 5vw;
   width: 80vw;
+  box-shadow: 5px 5px 5px 5px black;
 }
 
 .project__tile {
@@ -161,6 +163,7 @@ a:hover {
   position: relative;
   border: #373446 5px solid;
   padding: 3vw;
+  box-shadow: 5px 5px 5px 5px black;
 }
 .project__tile::before {
   content: "";
@@ -202,6 +205,55 @@ a:hover {
 
 .project__link:hover {
   scale: 1.1;
+}
+
+#contact {
+  background-color: #373446;
+  margin-top: 5vh;
+  padding: 3vh;
+  box-shadow: 20px 20px 20px 20px black;
+  border-top-left-radius: 70%;
+  border-top-right-radius: 70%;
+}
+
+.contact__header {
+  font-size: min(5vw, 30px);
+  padding: 1vw;
+  width: 30vw;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+}
+
+.contact__email__link {
+  display: block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  font-size: min(4vw, 20px);
+  color: rgb(184, 223, 255);
+  text-align: center;
+  margin: 3vh auto;
+}
+
+.contact__circle__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.contact__circle__links a {
+  padding: 1vw;
+}
+.contact__circle__links a img {
+  width: 50px;
+  height: 50px;
+}
+.contact__circle__links a:hover {
+  scale: 1.1;
+  background-color: #373446;
 }
 
 @media only screen and (min-width: 600px) {
