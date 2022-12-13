@@ -60,6 +60,7 @@ a:hover{
     border-bottom: $accent-color 3px solid;
     img{
         width: 5vw;
+        height: auto;
     }
     .flex--nav {
         @include flex(row, center, center);
@@ -144,7 +145,9 @@ a:hover{
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    height: auto;
     border-radius: 10%;
+    object-fit: scale-down;
 }
 
 #projects{
@@ -290,6 +293,7 @@ a:hover{
     }
     .bio__portrait{
         width: 40%;
+        
     }
 }
 

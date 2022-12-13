@@ -39,6 +39,7 @@ a:hover {
 }
 .header img {
   width: 5vw;
+  height: auto;
 }
 .header .flex--nav {
   display: flex;
@@ -132,7 +133,10 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  height: auto;
   border-radius: 10%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 #projects {
