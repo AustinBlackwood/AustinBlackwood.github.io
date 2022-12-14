@@ -97,7 +97,7 @@ a:hover{
     max-width: 700px;
     position: relative;
     text-transform: uppercase;
-    width: 90vw;
+    width: 100vw;
     z-index: 1;
 }
 
@@ -110,8 +110,7 @@ a:hover{
     color: var(--color-hero-bg);
     font-size: min(13vw, 102px);
     line-height: 1.4;
-    background: linear-gradient($background-color 39%, $accent-color 39%);
-    background-attachment: fixed;
+    background-color: $accent-color;
     color: $background-color;
 }
 
@@ -121,9 +120,8 @@ a:hover{
 
 .hero__line-4 {
     color: $background-color;
-    background: linear-gradient($accent-color 50%, $background-color 50%);
-    background-attachment: fixed;
-    font-size: min(10.48vw, 66px);
+    background-color: $accent-color-2;
+    font-size: min(10vw, 66px);
     margin-left: auto;
     margin-right: auto;
 }
@@ -146,8 +144,8 @@ a:hover{
     margin-right: auto;
     width: 70%;
     height: auto;
-    border-radius: 10%;
-    object-fit: scale-down;
+    object-fit:cover;
+    border-radius: 30px;
 }
 
 #projects{
@@ -159,8 +157,7 @@ a:hover{
 }
 
 .projects__header{
-    background: linear-gradient($accent-color-2 30%, $accent-color 90%);
-    background-attachment: fixed;
+    background-color: $accent-color-2;
     font-size: min(5vw, 30px);
     padding: 5vw;
     width: 80vw;
@@ -265,6 +262,7 @@ a:hover{
 
 
 @media only screen and (min-width: 600px) {
+
     .header {
         @include flex(row, space-between, center);
         .header__name{
@@ -284,8 +282,16 @@ a:hover{
 
     .nameplate{
         margin-top: 10vh;
-        
+        .hero__line-2{
+            background: linear-gradient($background-color 39%, $accent-color 39%);
+            background-attachment: fixed;
+        }
+        .hero__line-4{
+            background: linear-gradient($accent-color-2 50%, $background-color 50%);
+            background-attachment: fixed;
+        }
     }
+    
     .bio__container{
         @include flex(row, space-around, align-items);
         gap: 10%;
@@ -293,7 +299,11 @@ a:hover{
     }
     .bio__portrait{
         width: 40%;
-        
+    }
+
+    .projects__header{
+        background: linear-gradient($accent-color-2 30%, $accent-color 90%);
+        background-attachment: fixed;
     }
 }
 

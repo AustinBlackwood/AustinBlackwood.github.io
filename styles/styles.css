@@ -81,7 +81,7 @@ a:hover {
   max-width: 700px;
   position: relative;
   text-transform: uppercase;
-  width: 90vw;
+  width: 100vw;
   z-index: 1;
 }
 
@@ -95,8 +95,7 @@ a:hover {
   color: var(--color-hero-bg);
   font-size: min(13vw, 102px);
   line-height: 1.4;
-  background: linear-gradient(#000029 39%, rgb(136, 255, 146) 39%);
-  background-attachment: fixed;
+  background-color: rgb(136, 255, 146);
   color: #000029;
 }
 
@@ -106,9 +105,8 @@ a:hover {
 
 .hero__line-4 {
   color: #000029;
-  background: linear-gradient(rgb(136, 255, 146) 50%, #000029 50%);
-  background-attachment: fixed;
-  font-size: min(10.48vw, 66px);
+  background-color: rgb(184, 223, 255);
+  font-size: min(10vw, 66px);
   margin-left: auto;
   margin-right: auto;
 }
@@ -134,9 +132,9 @@ a:hover {
   margin-right: auto;
   width: 70%;
   height: auto;
-  border-radius: 10%;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
 }
 
 #projects {
@@ -148,8 +146,7 @@ a:hover {
 }
 
 .projects__header {
-  background: linear-gradient(rgb(184, 223, 255) 30%, rgb(136, 255, 146) 90%);
-  background-attachment: fixed;
+  background-color: rgb(184, 223, 255);
   font-size: min(5vw, 30px);
   padding: 5vw;
   width: 80vw;
@@ -282,6 +279,14 @@ a:hover {
   .nameplate {
     margin-top: 10vh;
   }
+  .nameplate .hero__line-2 {
+    background: linear-gradient(#000029 39%, rgb(136, 255, 146) 39%);
+    background-attachment: fixed;
+  }
+  .nameplate .hero__line-4 {
+    background: linear-gradient(rgb(184, 223, 255) 50%, #000029 50%);
+    background-attachment: fixed;
+  }
   .bio__container {
     display: flex;
     flex-direction: row;
@@ -292,6 +297,10 @@ a:hover {
   }
   .bio__portrait {
     width: 40%;
+  }
+  .projects__header {
+    background: linear-gradient(rgb(184, 223, 255) 30%, rgb(136, 255, 146) 90%);
+    background-attachment: fixed;
   }
 }
 @media only screen and (min-width: 1300px) {
