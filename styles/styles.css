@@ -120,21 +120,30 @@ a:hover {
   color: white;
   padding: 5%;
   gap: 10px;
-  margin: 5%;
+  margin: 3%;
   border-radius: 15px 50px;
   font-size: large;
   box-shadow: 5px 5px 5px 5px black;
+}
+
+.bio__text {
+  font-weight: 100;
+  font-size: medium;
+  border: #000029 5px solid;
+  border-radius: 5px 25px;
+  padding: 5%;
 }
 
 .bio__portrait {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 90%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 30px;
+  border: #000029 5px solid black;
 }
 
 #projects {
@@ -229,7 +238,6 @@ a:hover {
 
 .contact__email__link {
   display: block;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   font-size: min(4vw, 20px);
@@ -257,7 +265,7 @@ a:hover {
   background-color: #373446;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 750px) {
   .header {
     display: flex;
     flex-direction: row;
@@ -292,7 +300,7 @@ a:hover {
     flex-direction: row;
     justify-content: space-around;
     align-items: align-items;
-    gap: 10%;
+    gap: 5%;
     font-size: large;
   }
   .bio__portrait {
